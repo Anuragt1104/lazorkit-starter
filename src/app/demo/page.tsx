@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { ServiceStatus } from '@/components/status/service-status';
 import {
   Wallet,
   Send,
@@ -75,6 +76,9 @@ export default function DemoDashboard() {
 
   return (
     <div className="space-y-8">
+      {/* Service Status Alert */}
+      <ServiceStatus />
+
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold mb-2">Demo Dashboard</h1>

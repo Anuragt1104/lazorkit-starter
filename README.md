@@ -211,10 +211,27 @@ npx vercel
 
 > **Note:** The LazorKit paymaster service may have CORS restrictions for certain domains. If you encounter "Failed to fetch" errors when connecting your passkey on a deployed site, this is due to the paymaster not allowing requests from that domain. The demo works fully when running locally on `localhost:3000`.
 
-### Known Deployment Issues
+### Known Issues
 
-- **CORS Errors**: The LazorKit paymaster at `https://lazorkit-paymaster.onrender.com` may block requests from some domains. This is a server-side configuration that needs to be addressed by LazorKit.
-- **Workaround**: Test locally where CORS is not an issue, or contact LazorKit to whitelist your deployment domain.
+#### Paymaster Service Status
+
+The LazorKit paymaster service (`https://lazorkit-paymaster.onrender.com`) is hosted on Render's free tier and may experience downtime. If you see "Failed to fetch" errors when connecting:
+
+1. **Check the Service Status**: The demo dashboard shows service health indicators
+2. **Wait and Retry**: Free tier services may cold-start after inactivity
+3. **Contact LazorKit**: Report persistent outages on [Twitter @lazorkit](https://x.com/lazorkit)
+
+| Service | URL | Purpose |
+|---------|-----|---------|
+| Portal | `https://portal.lazor.sh` | Passkey UI popup |
+| Paymaster | `https://lazorkit-paymaster.onrender.com` | Gas sponsorship |
+| RPC | `https://api.devnet.solana.com` | Solana Devnet |
+
+#### CORS Errors on Deployed Sites
+
+The paymaster may block requests from some domains. This is a server-side configuration issue.
+
+**Workaround**: Test locally on `localhost:3000`, or contact LazorKit to whitelist your deployment domain.
 
 ## Browser Compatibility
 
