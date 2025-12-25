@@ -25,7 +25,7 @@ A comprehensive starter template demonstrating passkey authentication and gasles
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/lazorkit-starter.git
+git clone https://github.com/Anuragt1104/lazorkit-starter.git
 cd lazorkit-starter
 
 # Install dependencies
@@ -191,6 +191,30 @@ const senderATA = await getAssociatedTokenAddress(
 2. Get Devnet SOL from the [Solana Faucet](https://faucet.solana.com/)
 3. Get Devnet USDC from the [Circle Faucet](https://faucet.circle.com/)
 4. Try the different demo features
+
+## Deployment
+
+### Running Locally (Recommended for Testing)
+
+The demo works best when running locally:
+
+```bash
+npm run dev
+# Open http://localhost:3000
+```
+
+### Deploying to Vercel
+
+```bash
+npx vercel
+```
+
+> **Note:** The LazorKit paymaster service may have CORS restrictions for certain domains. If you encounter "Failed to fetch" errors when connecting your passkey on a deployed site, this is due to the paymaster not allowing requests from that domain. The demo works fully when running locally on `localhost:3000`.
+
+### Known Deployment Issues
+
+- **CORS Errors**: The LazorKit paymaster at `https://lazorkit-paymaster.onrender.com` may block requests from some domains. This is a server-side configuration that needs to be addressed by LazorKit.
+- **Workaround**: Test locally where CORS is not an issue, or contact LazorKit to whitelist your deployment domain.
 
 ## Browser Compatibility
 
